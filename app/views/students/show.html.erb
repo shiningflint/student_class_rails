@@ -15,5 +15,10 @@
     <td><%= @student.phone %></td>
   </tr>
 </table>
-
+<p><%= link_to "Edit student information", edit_student_path(@student), class: "button" %></p>
+<p><%= link_to "Delete Student",
+  student_path(@student),
+  method: :delete,
+  class: "button button-alert",
+  data: {confirm: "Delete the student record #{@student.name}?"} %></p>
 <p><%= link_to "Back to student list", students_path, class: "button" %></p>

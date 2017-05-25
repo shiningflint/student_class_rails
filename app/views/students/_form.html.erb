@@ -1,0 +1,37 @@
+<div>
+  <%= form_for(student) do |f| %>
+    <div>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+    </div>
+    <div>
+      <p>
+        <%= f.label :date_of_birth, "Date of birth" %>
+        <%= f.text_field :date_of_birth %>
+      </p>
+    </div>
+    <div>
+      <p>
+        <%= f.label :phone, "Phone number" %>
+        <%= f.text_field :phone %>
+      </p>
+    </div>
+    <div>
+      <p><%= f.submit class: "button button-primary" %></p>
+      <p><%= link_to "Back", students_path, class: "button" %></p>
+    </div>
+  <% end %>
+</div>
+
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize @student.errors.count, "error" %></h2>
+  </div>
+  <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
