@@ -1,0 +1,32 @@
+<h1>Register New Student</h1>
+
+<div>
+  <%= form_for @student, url: students_path do |f| %>
+    <div>
+      <p><%= f.label :name %></p>
+      <p><%= f.text_field :name %></p>
+    </div>
+    <div>
+      <p><%= f.label :date_of_birth %></p>
+      <p><%= f.text_field :date_of_birth %></p>
+    </div>
+    <div>
+      <p><%= f.label :phone, "Phone number" %></p>
+      <p><%= f.text_field :phone %></p>
+    </div>
+    <div>
+      <p><%= f.submit "Register student" %></p>
+    </div>
+  <% end %>
+</div>
+
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize @student.errors.count, "error" %></h2>
+  </div>
+  <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

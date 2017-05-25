@@ -1,0 +1,19 @@
+<h1>Hi, <%= @student.name %>!</h1>
+
+<p>Your basic profile</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= @student.name %></td>
+  </tr>
+  <tr>
+    <th>Date of Birth</th>
+    <td><%= @student.date_of_birth %></td>
+  </tr>
+  <tr>
+    <th>Phone number</th>
+    <td><%= @student.phone %></td>
+  </tr>
+</table>
+
+<p><%= link_to "Back to student list", students_path %></p>
