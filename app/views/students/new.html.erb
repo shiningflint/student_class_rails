@@ -3,19 +3,26 @@
 <div>
   <%= form_for @student, url: students_path do |f| %>
     <div>
-      <p><%= f.label :name %></p>
-      <p><%= f.text_field :name %></p>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
     </div>
     <div>
-      <p><%= f.label :date_of_birth %></p>
-      <p><%= f.text_field :date_of_birth %></p>
+      <p>
+        <%= f.label :date_of_birth %>
+        <%= f.text_field :date_of_birth %>
+      </p>
     </div>
     <div>
-      <p><%= f.label :phone, "Phone number" %></p>
-      <p><%= f.text_field :phone %></p>
+      <p>
+        <%= f.label :phone, "Phone number" %>
+        <%= f.text_field :phone %>
+      </p>
     </div>
     <div>
-      <p><%= f.submit "Register student" %></p>
+      <p><%= f.submit "Register student", class: "button button-primary" %></p>
+      <p><%= link_to "Back", students_path, class: "button" %></p>
     </div>
   <% end %>
 </div>

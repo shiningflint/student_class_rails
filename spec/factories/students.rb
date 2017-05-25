@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :student do
-    name "MyString"
-    date_of_birth "MyString"
-    phone "MyString"
+    name "Adum"
+    date_of_birth "11-Nov-1993"
+    phone "0812345697"
   end
 end
