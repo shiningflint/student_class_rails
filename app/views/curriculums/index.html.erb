@@ -1,3 +1,10 @@
 <h1>Curriculums List</h1>
 
+<ul>
+  <% @curriculums.each do |curriculum| %>
+  <li><%= link_to curriculum.name, curriculum_path(curriculum) %></li>
+  <% end %>
+</ul>
+
 <p><%= link_to "Register new curriculum", new_curriculum_path, class: "button button-primary" %></p>
+<p><%= link_to "Back to top", root_path, class: "button" %></p>

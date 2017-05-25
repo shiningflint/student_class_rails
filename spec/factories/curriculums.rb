@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :curriculum do
-    name "MyString"
-    duration 1
+    name "Japanese"
+    duration 10
   end
 end

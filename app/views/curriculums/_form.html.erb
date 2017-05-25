@@ -1,0 +1,23 @@
+<div>
+  <%= form_for(curriculum) do |f| %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :duration %>
+      <%= f.text_field :duration %>
+    </p>
+    <p><%= f.submit class: "button button-primary" %></p>
+  <% end %>
+  <p><%= link_to "Back", curriculums_path, class: "button" %></p>
+</div>
+
+<% if @curriculum.errors.any? %>
+  <h2><%= pluralize @curriculum.errors.count, "error" %> present</h2>
+  <ul>
+    <% @curriculum.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
