@@ -1,0 +1,14 @@
+<h1><%= @curriculum.name %></h1>
+
+<table>
+  <tr>
+    <th>Curriculum name</th>
+    <td><%= @curriculum.name %></td>
+  <tr>
+  </tr>
+    <th>Curriculum duration</th>
+    <td><%= @curriculum.duration %> times</td>
+  </tr>
+</table>
+
+<p><%= link_to "Back", curriculums_path %></p>

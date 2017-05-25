@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root "statics#index"
 
-  resources :students
+  resources :students, :curriculums
 end
