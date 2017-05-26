@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   root "statics#index"
 
-  resources :students, :curriculums
+  resources :students
+  resources :curriculums do
+    resources :enrollments, only: [:index, :create, :destroy]
+  end
 end

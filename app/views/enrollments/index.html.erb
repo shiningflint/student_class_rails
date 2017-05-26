@@ -1,0 +1,13 @@
+<h1>Enroll students to <%= @curriculum.name %></h1>
+
+<div id="not-enrolled">
+  <h2>Students not enrolled to <%= @curriculum.name %></h2>
+  <table>
+    <% @nonStudents.each do |nonStudent| %>
+    <tr>
+      <th><%= nonStudent.name %></th>
+      <td><%= link_to "Enroll", curriculum_enrollments_path(@curriculum, student_id: nonStudent.id), method: :post %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

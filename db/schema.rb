@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525055419) do
+ActiveRecord::Schema.define(version: 20170526074601) do
 
   create_table "curriculums", force: :cascade do |t|
     t.string "name"
     t.integer "duration", limit: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "curriculum_id"
+    t.integer "student_id"
+    t.integer "grade", limit: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["curriculum_id"], name: "index_enrollments_on_curriculum_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
