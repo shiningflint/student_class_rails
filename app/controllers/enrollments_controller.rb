@@ -1,9 +1,8 @@
 class EnrollmentsController < ApplicationController
   def index
     @curriculum = Curriculum.find(params[:curriculum_id])
-    # @nonStudents = Student.all
-    # Finding students not enrolled to the selected class
-    @nonStudents = Student.includes(:enrollments).where(enrollments: { id: nil })
+    @students = Student.all
+    @enrolled_students = @curriculum.students
   end
 
   def create

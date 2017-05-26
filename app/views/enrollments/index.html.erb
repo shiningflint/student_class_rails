@@ -3,10 +3,14 @@
 <div id="not-enrolled">
   <h2>Students not enrolled to <%= @curriculum.name %></h2>
   <table>
-    <% @nonStudents.each do |nonStudent| %>
+    <% @students.each do |student| %>
     <tr>
-      <th><%= nonStudent.name %></th>
-      <td><%= link_to "Enroll", curriculum_enrollments_path(@curriculum, student_id: nonStudent.id), method: :post %></td>
+      <th><%= student.name %></th>
+      <% if @enrolled_students.include? student %>
+      <td>Enrolled</td>
+      <% else %>
+      <td><%= link_to "Enroll", curriculum_enrollments_path(@curriculum, student_id: student.id), method: :post %></td>
+      <% end %>
     </tr>
     <% end %>
   </table>

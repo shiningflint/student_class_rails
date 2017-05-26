@@ -20,5 +20,11 @@ RSpec.feature "Admin can enroll students in a class" do
     end
 
     expect(page).to have_content "Enrollment registered successfully."
+
+    click_link "Enroll students to this class"
+    within("#not-enrolled") do
+      expect(page).to have_content "Enrolled"
+      expect(page).to_not have_link "Enroll"
+    end
   end
 end
