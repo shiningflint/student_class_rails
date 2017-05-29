@@ -10,10 +10,18 @@ class EnrollmentsController < ApplicationController
 
     if @enrollment.save
       flash[:notice] = "Enrollment registered successfully."
-      redirect_to curriculum_path(params[:curriculum_id])
+      redirect_to curriculum_enrollments_path(params[:curriculum_id])
     else
       # fail
     end
+  end
+
+  def destroy
+    enrollment = Enrollment.where(curriculum_id: params[:curriculum_id], student_id: params[:student_id])
+    enrollment.destroy_all
+
+    flash[:notice] = "The student has been dismissed."
+    redirect_to curriculum_enrollments_path(params[:curriculum_id])
   end
 
   private

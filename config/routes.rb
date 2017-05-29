@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :students
   resources :curriculums do
-    resources :enrollments, only: [:index, :create, :destroy]
+    resources :enrollments, only: [:index, :create]
+    delete 'students/:student_id',
+      to: 'enrollments#destroy',
+      as: 'enrollment'
   end
 end

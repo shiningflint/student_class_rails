@@ -8,7 +8,7 @@ RSpec.feature "Admin can enroll students in a class" do
     visit "/"
     click_link "Curriculums"
     click_link "Bertapa Melayang"
-    click_link "Enroll students to this class"
+    click_link "Student enrollments"
 
     expect(page.current_url).to eq curriculum_enrollments_url(curriculum)
 
@@ -21,10 +21,12 @@ RSpec.feature "Admin can enroll students in a class" do
 
     expect(page).to have_content "Enrollment registered successfully."
 
-    click_link "Enroll students to this class"
+    within("#enrolled") do
+      expect(page).to have_content "Adum"
+    end
+
     within("#not-enrolled") do
-      expect(page).to have_content "Enrolled"
-      expect(page).to_not have_link "Enroll"
+      expect(page).to_not have_content "Adum"
     end
   end
 end

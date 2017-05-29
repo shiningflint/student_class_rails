@@ -19,6 +19,6 @@
 </ul>
 
 <p><%= link_to "Edit curriculum", edit_curriculum_path(@curriculum), class: "button" %></p>
-<p><%= link_to "Enroll students to this class", curriculum_enrollments_path(@curriculum), class: "button button-primary" %></p>
+<p><%= link_to "Student enrollments", curriculum_enrollments_path(@curriculum), class: "button button-primary" %></p>
 <p><%= link_to "Delete curriculum", curriculum_path(@curriculum), method: :delete, data: {confirm: "Delete the curriculum #{@curriculum.name}?"}, class: "button button-alert" %></p>
 <p><%= link_to "Back", curriculums_path, class: "button" %></p>
